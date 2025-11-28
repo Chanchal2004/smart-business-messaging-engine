@@ -280,7 +280,7 @@ const Home = () => {
             <p className="whatsapp-price">${product.price}</p>
             <p>Complete your purchase now and get 10% off!</p>
           </div>
-          <a href={`/?utm_message_id=${showMessagePreview?.message_id}`} target="_blank" rel="noopener noreferrer" className="whatsapp-cta" data-testid="message-cta-link">
+          <a href={`https://shopflow.app/?id=${showMessagePreview?.message_id}`} target="_blank" rel="noopener noreferrer" className="whatsapp-cta" data-testid="message-cta-link">
             Shop Now
           </a>
           <div className="whatsapp-buttons">
