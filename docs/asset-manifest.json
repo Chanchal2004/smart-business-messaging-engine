@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.53f801fa.css",
-    "main.js": "/static/js/main.c06c239e.js",
-    "index.html": "/index.html",
-    "main.53f801fa.css.map": "/static/css/main.53f801fa.css.map",
-    "main.c06c239e.js.map": "/static/js/main.c06c239e.js.map"
+    "main.css": "/smart-business-messaging-engine/static/css/main.53f801fa.css",
+    "main.js": "/smart-business-messaging-engine/static/js/main.c06c239e.js",
+    "index.html": "/smart-business-messaging-engine/index.html",
+    "main.53f801fa.css.map": "/smart-business-messaging-engine/static/css/main.53f801fa.css.map",
+    "main.c06c239e.js.map": "/smart-business-messaging-engine/static/js/main.c06c239e.js.map"
   },
   "entrypoints": [
     "static/css/main.53f801fa.css",
