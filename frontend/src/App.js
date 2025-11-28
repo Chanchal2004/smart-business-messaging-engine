@@ -292,17 +292,22 @@ const Home = () => {
     </div>
   );
 
-  const getSMSPreview = (product) => (
-    <div className="sms-preview" data-testid="sms-preview">
-      <div className="sms-header">SMS Message</div>
-      <div className="sms-bubble">
-        <p>Hi! You left {product.name} (${product.price}) in your cart.</p>
-        <p>Complete your order now & get 10% OFF!</p>
-        <p>Shop: {window.location.origin}?utm_message_id={showMessagePreview?.message_id}</p>
-        <p className="sms-footer">Reply STOP to opt out</p>
+  const getSMSPreview = (product) => {
+    // Clean URL without domain name
+    const cleanUrl = `shopflow.app/?id=${showMessagePreview?.message_id}`;
+    
+    return (
+      <div className="sms-preview" data-testid="sms-preview">
+        <div className="sms-header">SMS Message</div>
+        <div className="sms-bubble">
+          <p>Hi! You left {product.name} (${product.price}) in your cart.</p>
+          <p>Complete your order now & get 10% OFF!</p>
+          <p>Shop: {cleanUrl}</p>
+          <p className="sms-footer">Reply STOP to opt out</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="app-container">
