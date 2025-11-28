@@ -35,6 +35,18 @@ const Home = () => {
   useEffect(() => {
     initUser();
     loadProducts();
+    
+    // Remove any emergent badges that might be added dynamically
+    const removeEmergentBadge = () => {
+      const badges = document.querySelectorAll('a[href*="emergent"], [id*="emergent"], [class*="emergent"]');
+      badges.forEach(badge => badge.remove());
+    };
+    
+    // Run immediately and set interval
+    removeEmergentBadge();
+    const interval = setInterval(removeEmergentBadge, 500);
+    
+    return () => clearInterval(interval);
   }, []);
 
   const initUser = async () => {
