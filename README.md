@@ -1,299 +1,69 @@
 Smart Business Messaging Engine
 Real-Time, Cross-Channel Ecommerce Messaging Automation (WhatsApp-First, SMS Fallback)
 
-A production-grade demo system that detects customer actions, generates personalized messages, delivers them through the best channel, and measures real-time performance while respecting consent and privacy.
+This system detects customer actions, generates personalized messages, delivers them through WhatsApp with SMS fallback, and tracks message performance in real time while maintaining strict privacy and consent rules.
 
 Why This Project Matters
-Problem
+Problem: Ecommerce brands lose revenue because customers abandon carts, miss price-drop updates, receive slow support replies, get messages on wrong channels, and do not receive personalized or measurable communication.
 
-Ecommerce brands lose revenue because of:
+Solution: This engine detects high-value ecommerce events, creates contextual messages, sends them through WhatsApp/SMS based on user preference, tracks delivered/read/click/conversion events, enforces user consent and privacy, and provides admin tools and dashboards.
 
-Cart abandonment
-
-Missed price-drop updates
-
-Slow support replies
-
-Wrong-channel messaging
-
-No personalization
-
-No analytics or attribution
-
-Solution
-
-A Smart Business Messaging Engine that:
-
-Detects high-value events
-
-Generates contextual messages
-
-Sends via WhatsApp with SMS fallback
-
-Tracks delivered/read/click/conversion
-
-Enforces consent and privacy
-
-Includes admin controls + dashboard
-
-Impact
-
-Recovers abandoned carts
-
-Increases conversions
-
-Improves engagement
-
-Builds trust via consent-first communication
+Impact: Helps brands recover abandoned carts, increase conversions, improve engagement, and build trust through consent-first and privacy-safe communication.
 
 Key Features
-
 End-to-end working system
-
-WhatsApp-first delivery
-
+WhatsApp-first delivery design
 Automatic SMS fallback
-
-Anonymous User ID + masked phone
-
-Event → decision → message pipeline
-
-Real-time analytics dashboard
-
-Admin control panel
-
-Reliable UI with feedback
-
-Scalable architecture
+Anonymous User ID and masked phone number
+Event-to-message decision pipeline
+Real-time dashboard with all metrics
+Admin controls for channels and user actions
+Reliable UI with visible feedback
+Scalable and professional architecture
 
 System Architecture
-Frontend Website
+Frontend Website includes product catalog, product modal, add/remove cart flow, checkout simulation, consent modal for WhatsApp/SMS opt-in, profile badge showing masked phone and channel, WhatsApp and SMS message preview panel, admin panel, and a live dashboard.
 
-Product catalog (multiple items)
+Backend contains event ingestion API, profile and consent management, message template composer, WhatsApp/SMS dispatcher, fallback routing engine, queue processor for reliable execution, webhook simulator emitting delivered/read/click events, conversion attribution using utm_message_id, and audit log storage.
 
-Product detail modal
+Queue Layer ensures ordered and reliable event/message processing with retry and backoff rules.
 
-Add/Remove cart
-
-Checkout simulation
-
-Consent modal (WhatsApp/SMS)
-
-User profile badge (masked phone + channel)
-
-Message preview (WhatsApp + SMS)
-
-Admin panel
-
-Real-time dashboard
-
-Backend (APIs + Worker)
-
-Event ingestion
-
-User profile + consent management
-
-Message template composer
-
-Dispatcher (WhatsApp + SMS)
-
-Fallback routing
-
-Queue processor with retries
-
-Webhook simulator
-
-Conversion attribution (utm_message_id)
-
-Audit logging
-
-Queue Layer
-
-Reliable message processing
-
-Retry + backoff
-
-Ordered execution
-
-Channel Adapters
-
-WhatsApp adapter
-
-SMS adapter
-
-Instagram preview adapter
+Channel Adapters include WhatsApp adapter, SMS adapter, and Instagram preview adapter.
 
 Privacy and Consent System
-When user lands:
-
-Anonymous User ID is generated
-
-No personal data stored
-
-When user opts in:
-
-User enters phone number
-
-System masks it (e.g., +91 ••••••9721)
-
-Stores masked phone + preferred channel
-
-When user revokes consent:
-
-Messaging blocked instantly
-
-Queued jobs cancelled
-
-Identifiers removed
+When the user lands on the site, an anonymous User ID is generated with no personal information.
+When the user opts in, the phone entered is immediately masked (e.g., +91 ••••••9721) and stored with their preferred channel.
+When the user revokes consent, all sending stops, queued messages are blocked, and identifiers are removed.
 
 Feature Pipeline (Detect → Decide → Compose → Deliver → Track)
-1. Detect
-
-Triggers include:
-
-add_to_cart
-
-view_product
-
-price_drop
-
-checkout_started
-
-support_message
-
-2. Decide
-
-Rule engine selects:
-
-Best product
-
-Best template
-
-Best channel
-
-Best CTA
-
-3. Compose
-
-Template placeholders:
-
-{product}
-{discount}
-{cta}
-{image}
-{name}
-
-
-Output formats:
-
-WhatsApp rich card
-
-SMS text
-
-4. Deliver
-
-Priority order:
-
-WhatsApp
-
-SMS fallback
-
-Hold if no consent
-
-5. Track
-
-Webhook simulator updates:
-
-Delivered
-
-Read
-
-Click
-
-Conversion
-
-Dashboard updates live.
+Detect: System captures events such as add_to_cart, view_product, price_drop, checkout_started, and support_message.
+Decide: Rule engine selects the right product, message template, channel, and CTA.
+Compose: Templates use placeholders like {product}, {discount}, {cta}, {image}, {name} and generate WhatsApp rich cards and SMS text versions.
+Deliver: Priority is WhatsApp first, then SMS fallback if WhatsApp is paused or fails, otherwise hold if no consent.
+Track: Webhook simulator updates message status from delivered to read to click to conversion, and the dashboard updates instantly.
 
 Admin Panel Features
-
-Pause/Unpause WhatsApp
-
-Trigger abandoned-cart flow
-
-Force send message
-
-Preview WhatsApp + SMS
-
-View logs
-
-Revoke consent
-
-Delete user data
-
-Real-time dashboard metrics
+Admin can pause or unpause WhatsApp, trigger abandoned-cart flow, simulate sending messages, preview WhatsApp and SMS templates, view logs, revoke consent, delete user data, and view real-time metrics.
 
 Dashboard Metrics
-
-Dashboard displays:
-
-Sent
-
-Delivered
-
-Read
-
-Clicked
-
-Converted
-
-Opt-outs
-
-A/B uplift
-
-Conversion funnel
-
-Real-time event timeline
+The dashboard shows sent, delivered, read, clicked, converted, opt-outs, A/B uplift, funnel metrics, and real-time timeline logs.
 
 End-to-End Demo Flow
-
-Open website → product grid loads
-
-Add products to cart
-
-Open cart → trigger abandoned cart
-
-Message preview opens
-
-Send message (simulate)
-
-Dashboard updates: sent → delivered → read → click
-
-Click CTA → utm_message_id recorded
-
-Simulate checkout → conversion updated
-
-Pause WhatsApp → trigger again → SMS fallback
-
-Revoke consent → sending blocked
-
-Delete user data → identifiers removed
-
-Dashboard updates accordingly
+Open website and view product grid.
+Add multiple products to cart.
+Open cart and trigger abandoned cart.
+Message preview (WhatsApp and SMS) appears.
+Simulate sending.
+Dashboard updates for sent, delivered, read, click.
+User clicks CTA and utm_message_id is recorded.
+Simulated checkout records conversion.
+Pause WhatsApp and trigger again to demonstrate SMS fallback.
+Revoke consent and verify sending is blocked.
+Delete data to remove identifiers.
+Dashboard reflects all updates.
 
 UI Characteristics
-
-Clean product grid
-
-WhatsApp-style preview
-
-Smooth transitions
-
-Toast notifications
-
-Masked phone display
-
-Consistent theme
+Clean product grid, realistic WhatsApp-style message preview, smooth transitions, toast notifications for all actions, masked phone number in profile, and consistent theme.
 
 Privacy Note
-
 “We store only masked contact details. Consent can be revoked at any time. Deleting data removes all identifiers immediately.”
