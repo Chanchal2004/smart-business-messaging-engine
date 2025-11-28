@@ -6,11 +6,11 @@ A production-grade demo system that detects customer actions, generates personal
 Why This Project Matters
 Problem
 
-Ecommerce brands face revenue loss because of:
+Ecommerce brands lose revenue because of:
 
 Cart abandonment
 
-Missed price-drop notifications
+Missed price-drop updates
 
 Slow support replies
 
@@ -26,47 +26,45 @@ A Smart Business Messaging Engine that:
 
 Detects high-value events
 
-Creates contextual messages
+Generates contextual messages
 
-Sends via WhatsApp with automatic SMS fallback
+Sends via WhatsApp with SMS fallback
 
 Tracks delivered/read/click/conversion
 
-Enforces consent + privacy
+Enforces consent and privacy
 
-Provides admin controls and real-time dashboards
+Includes admin controls + dashboard
 
 Impact
 
-This system helps brands:
+Recovers abandoned carts
 
-Recover abandoned carts
+Increases conversions
 
-Increase conversions
+Improves engagement
 
-Improve engagement
-
-Build trust with consent-first communication
+Builds trust via consent-first communication
 
 Key Features
 
-End-to-end working flow
+End-to-end working system
 
-WhatsApp-first messaging
+WhatsApp-first delivery
 
 Automatic SMS fallback
 
-Anonymous User ID + masked phone number
+Anonymous User ID + masked phone
 
-Event → Decision → Message pipeline
+Event → decision → message pipeline
 
 Real-time analytics dashboard
 
-Admin controls for channels and users
+Admin control panel
 
-Reliable UI with proper feedback
+Reliable UI with feedback
 
-Scalable and professional architecture
+Scalable architecture
 
 System Architecture
 Frontend Website
@@ -83,7 +81,7 @@ Consent modal (WhatsApp/SMS)
 
 User profile badge (masked phone + channel)
 
-Message preview panel (WhatsApp + SMS)
+Message preview (WhatsApp + SMS)
 
 Admin panel
 
@@ -111,7 +109,11 @@ Audit logging
 
 Queue Layer
 
-Handles reliable event and message processing with retry/backoff.
+Reliable message processing
+
+Retry + backoff
+
+Ordered execution
 
 Channel Adapters
 
@@ -124,9 +126,9 @@ Instagram preview adapter
 Privacy and Consent System
 When user lands:
 
-Anonymous User ID is created
+Anonymous User ID is generated
 
-No personal details stored
+No personal data stored
 
 When user opts in:
 
@@ -138,18 +140,16 @@ Stores masked phone + preferred channel
 
 When user revokes consent:
 
-All messaging blocked instantly
+Messaging blocked instantly
 
 Queued jobs cancelled
-
-Profile updated
 
 Identifiers removed
 
 Feature Pipeline (Detect → Decide → Compose → Deliver → Track)
 1. Detect
 
-Events like:
+Triggers include:
 
 add_to_cart
 
@@ -175,7 +175,7 @@ Best CTA
 
 3. Compose
 
-Templates include placeholders:
+Template placeholders:
 
 {product}
 {discount}
@@ -184,15 +184,15 @@ Templates include placeholders:
 {name}
 
 
-Output:
+Output formats:
 
 WhatsApp rich card
 
-SMS text version
+SMS text
 
 4. Deliver
 
-Priority:
+Priority order:
 
 WhatsApp
 
@@ -212,7 +212,7 @@ Click
 
 Conversion
 
-Dashboard updates in real time.
+Dashboard updates live.
 
 Admin Panel Features
 
@@ -220,7 +220,7 @@ Pause/Unpause WhatsApp
 
 Trigger abandoned-cart flow
 
-Force-send a message
+Force send message
 
 Preview WhatsApp + SMS
 
@@ -230,11 +230,11 @@ Revoke consent
 
 Delete user data
 
-Real-time metrics display
+Real-time dashboard metrics
 
 Dashboard Metrics
 
-Displays:
+Dashboard displays:
 
 Sent
 
@@ -250,7 +250,7 @@ Opt-outs
 
 A/B uplift
 
-Funnel metrics
+Conversion funnel
 
 Real-time event timeline
 
@@ -258,39 +258,39 @@ End-to-End Demo Flow
 
 Open website → product grid loads
 
-Add multiple products
+Add products to cart
 
-Open cart → click Trigger Abandoned Cart
+Open cart → trigger abandoned cart
 
-Message preview (WhatsApp + SMS) opens
+Message preview opens
 
-Click Send (Simulate)
+Send message (simulate)
 
 Dashboard updates: sent → delivered → read → click
 
-User clicks CTA → utm_message_id tracked
+Click CTA → utm_message_id recorded
 
-Simulated checkout → conversion recorded
+Simulate checkout → conversion updated
 
 Pause WhatsApp → trigger again → SMS fallback
 
 Revoke consent → sending blocked
 
-Delete data → profile wiped
+Delete user data → identifiers removed
 
-Dashboard reflects updates
+Dashboard updates accordingly
 
 UI Characteristics
 
-Clean and simple layout
+Clean product grid
 
-Real WhatsApp-style preview
+WhatsApp-style preview
 
 Smooth transitions
 
-Toast notifications for each action
+Toast notifications
 
-Masked phone in profile
+Masked phone display
 
 Consistent theme
 
